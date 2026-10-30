@@ -127,9 +127,9 @@ git push -u origin main
 | `ModuleNotFoundError: pymysql` | Falta ejecutar `pip install pymysql` |
 
 ## Integrantes
-Denilson Davis Machaca Flores 
-Ronald Rruz Chino
-Daniel Wilfredo Pomarez Huaranca
-Jhilmar Jadiel Luna Gisbert
+Denilson Davis Machaca Flores, 
+Ronald Rruz Chino, 
+Daniel Wilfredo Pomarez Huaranca, 
+Jhilmar Jadiel Luna Gisbert, 
 
 Proyecto desarrollado para la asignatura **PFU-111**.
