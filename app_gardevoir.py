@@ -4,8 +4,8 @@ from datetime import date
 import pymysql
 
 # --- Cambia estos datos por los de tu base ---
-DB = dict(host="localhost", user="root", password="", database="tienda_db")
-TABLA = "productos"
+DB = dict(host="10.0.16.154", user="pfu-111", password="SuperPassword123+", database="PFU_111_Tienda")
+TABLA = "Productos"
 
 
 def guardar():
