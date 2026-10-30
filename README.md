@@ -4,13 +4,11 @@ Aplicación de escritorio en **Python** con interfaz gráfica (**tkinter**) que 
 
 ## Características
 
-- Formulario simple para ingresar nombre, descripción, precio y stock.
+- Formulario para ingresar nombre, descripción, precio y stock.
 - La **fecha de registro** se guarda automáticamente con la fecha del día.
-- Validación de datos:
-  - El nombre es obligatorio.
-  - El precio debe ser un número y el stock un entero.
+- Validación: el nombre es obligatorio, el precio debe ser número y el stock un entero.
 - Mensajes de aviso, error y confirmación con `messagebox`.
-- Los campos se limpian después de guardar para registrar otro producto.
+- Los campos se limpian después de guardar.
 
 ## Tecnologías
 
@@ -27,26 +25,34 @@ Aplicación de escritorio en **Python** con interfaz gráfica (**tkinter**) que 
 - Acceso a un servidor MySQL con la base `tienda_db`
 - Librería `pymysql`
 
-## Instalación
+## Guía paso a paso
 
-1. Clona el repositorio:
+### Paso 1. Verificar Python
 
-   ```bash
-   git clone <url-del-repositorio>
-   cd <carpeta-del-proyecto>
-   ```
+```bash
+python --version
+```
 
-2. Instala la dependencia:
+Si da error, prueba con `py --version` o instala Python desde python.org (marca la casilla **Add Python to PATH**).
 
-   ```bash
-   pip install pymysql
-   ```
+### Paso 2. Clonar el repositorio
 
-> `tkinter` ya viene incluido con Python en Windows. En Linux puede requerir `sudo apt install python3-tk`.
+```bash
+git clone <url-del-repositorio>
+cd <carpeta-del-proyecto>
+```
 
-## Configuración de la base de datos
+### Paso 3. Instalar la dependencia
 
-La tabla `productos` debe existir en la base `PFU_111_tienda`. Ejemplo de estructura:
+```bash
+pip install pymysql
+```
+
+> `tkinter` ya viene incluido con Python en Windows. En Linux: `sudo apt install python3-tk`.
+
+### Paso 4. Crear la tabla en MySQL
+
+Conéctate a tu servidor, selecciona la base `tienda_db` y ejecuta:
 
 ```sql
 CREATE TABLE productos (
@@ -59,24 +65,47 @@ CREATE TABLE productos (
 );
 ```
 
-Edita los datos de conexión al inicio del archivo `.py`:
+### Paso 5. Configurar la conexión
+
+Abre el archivo `.py` y edita los datos al inicio:
 
 ```python
 DB = dict(host="TU_HOST", user="TU_USUARIO", password="TU_CONTRASEÑA", database="tienda_db")
 TABLA = "productos"
 ```
-
-## Uso
-
-Ejecuta el programa desde la terminal (Git Bash, CMD o PowerShell):
+### Paso 6. Ejecutar el programa
 
 ```bash
 python nombre_del_archivo.py
 ```
 
-1. Escribe el **nombre**, la **descripción**, el **precio** y el **stock**.
-2. Presiona **Guardar producto**.
-3. Verás el mensaje *"Producto guardado en la base de datos"* y el formulario quedará listo para un nuevo registro.
+Se abrirá la ventana **Registrar producto**.
+
+### Paso 7. Registrar un producto
+
+1. Escribe el **nombre** del producto.
+2. Escribe la **descripción** (opcional).
+3. Escribe el **precio** (ejemplo: `25.50`).
+4. Escribe el **stock** (ejemplo: `10`).
+5. Presiona **Guardar producto**.
+6. Aparecerá el mensaje *"Producto guardado en la base de datos"* y el formulario quedará vacío.
+
+### Paso 8. Verificar en la base de datos
+
+```sql
+SELECT * FROM productos;
+```
+
+## Subir el proyecto a GitHub
+
+```bash
+git init
+git add .
+git commit -m "Agrega app para registrar productos"
+git remote add origin <url-del-repositorio>
+git branch -M main
+git push -u origin main
+```
 
 ## Campos del formulario
 
@@ -95,6 +124,7 @@ python nombre_del_archivo.py
 | *Falta dato* | El nombre está vacío |
 | *Dato inválido* | El precio no es número o el stock no es entero |
 | *Error de base de datos* | Servidor inaccesible, credenciales incorrectas o tabla inexistente |
+| `ModuleNotFoundError: pymysql` | Falta ejecutar `pip install pymysql` |
 
 ## Integrantes
 Denilson Davis Machaca Flores 
