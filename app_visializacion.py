@@ -3,7 +3,7 @@ import tkinter as tk
 from tkinter import ttk, messagebox
 import pymysql
 
-DB = dict(host="localhost", user="root", password="", database="tienda_db")
+DB = dict(host="10.0.16.154", user="pfu-111", password="SuperPassword123+", database="PFU_111_Tienda")
 TABLA = "Productos"
 
 
