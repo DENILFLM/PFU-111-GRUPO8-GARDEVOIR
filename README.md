@@ -22,7 +22,7 @@ Aplicación de escritorio en **Python** con interfaz gráfica (**tkinter**) que 
 ## Requisitos
 
 - Python 3.8 o superior
-- Acceso a un servidor MySQL con la base `tienda_db`
+- Acceso a un servidor MySQL con la base `PFU_111_Tienda`
 - Librería `pymysql`
 
 ## Guía paso a paso
@@ -52,7 +52,7 @@ pip install pymysql
 
 ### Paso 4. Crear la tabla en MySQL
 
-Conéctate a tu servidor, selecciona la base `tienda_db` y ejecuta:
+Conéctate a tu servidor, selecciona la base `PFU_111_Tienda` y ejecuta:
 
 ```sql
 CREATE TABLE productos (
@@ -70,7 +70,7 @@ CREATE TABLE productos (
 Abre el archivo `.py` y edita los datos al inicio:
 
 ```python
-DB = dict(host="TU_HOST", user="TU_USUARIO", password="TU_CONTRASEÑA", database="tienda_db")
+DB = dict(host="TU_HOST", user="TU_USUARIO", password="TU_CONTRASEÑA", database="PFU_111_Tienda")
 TABLA = "productos"
 ```
 ### Paso 6. Ejecutar el programa
